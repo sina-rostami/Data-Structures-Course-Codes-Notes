@@ -1,0 +1,64 @@
+\documentclass{report}
+\usepackage[
+    a4paper,
+    top = 2cm,
+    left = 2cm,
+    bottom = 3cm,
+    ]{geometry}
+\usepackage{graphicx}
+\usepackage{algorithm2e}
+\pagestyle{empty}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\title{\Huge Data Structures \\ HW2}
+\author{\huge Sina Rostami \\\huge \textbf{9822143}}
+\date{Fall 2020}
+
+
+\begin{document}
+    \begin{figure}
+        \includegraphics[height = 30mm,width = 40mm]{../kntu_logo.jpg}
+    \end{figure}
+    \maketitle
+    \section*{Problem 1:}
+        we want to : \\
+        1. copy the whole linked-list's nodes in an array.\\
+        2. delete the ex-linked-list.\\
+        3. create a new linked-list and copy the nodes of the array to it from the end.\\\\
+        \textbf{Pseudo-Code}
+        \begin{algorithm}
+            let \textit{linked\_list} be the linked-list we want to reverse.\\
+            let \textit{size} be the size of the linked\_list.\\
+            let \textit{arr} be an array of data with length := size.\\
+            let \textit{temp\_iterator} points to head of \textit{linked\_list}.\\
+            \For(){i in range(0, size - 1) }{
+                $arr[i] \gets  \textit{temp\_iterator}.data$\\
+                $\textit{temp\_iterator} \gets \textit{temp\_iterator}.next$
+                }
+                let \textit{new\_linket\_list} be a linked-list.\\
+                \For(){i in range(size -1, 0)}{
+                    $Push(new\_linket\_list, arr[i])$\\
+                }
+                \SetKwFunction{FMain}{Push}
+                \SetKwProg{Fn}{Function}{:}{\KwRet{}}
+                \Fn{\FMain{$list$, $data$}}{
+                    \If(){list.head equals with NULL}{
+                        $list.head \gets new\ Node(data)$ \\
+                        \KwRet{}
+                    }
+                    let \textit{temp\_iterator} points to head of \textit{list}\\
+                    \While(){temp\_iterator.next not equals with NULL}{
+                        $temp\_iterator \gets temp\_iterator.next$
+                    }
+                    $temp\_iterator.next \gets new\ Node(data)$
+                }
+                .\\Now the \textit{new\_linket\_list} is the linked-list we want.
+        \end{algorithm}
+            
+        
+        
+            
+    
+\end{document}
+
+    

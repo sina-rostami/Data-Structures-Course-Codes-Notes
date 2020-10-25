@@ -1,0 +1,166 @@
+\documentclass{report}
+\usepackage[
+    a4paper,
+    top = 2cm,
+    left = 2cm,
+    bottom = 3cm,
+    ]{geometry}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\title{\Huge Data Structures \\ HW1}
+\author{\huge Sina Rostami \\\huge \textbf{9822143}}
+\date{Fall 2020}
+
+
+\begin{document}
+    \begin{figure}
+        \includegraphics[height = 30mm,width = 40mm]{../kntu_logo.jpg}
+    \end{figure}
+    \maketitle
+    \section*{\huge Problem 1}
+        
+        Show that $3n^2 + 25$ is $O(n^2)$ :\\
+            \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            \large $ 3n^2 + 25 \leq c.n^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 4$ :
+        \begin{center}
+            $3n^2 + 25 \leq 4n^2$ \\
+            $25 \leq n^2$ \\
+            $5 \leq n$ \\
+            \huge $\rightarrow$ $c = 4, n_0 = 5$ 
+        \end{center}
+
+    \section*{\huge Problem 2}
+        if $4n^3 + 7n^2 + 12$ is $O(n^3)$ find its corresponding
+        $n_0$ and $k$ according to the \\Big O notation formula. :\\
+            \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            \large $ 4n^3 + 7n^2 + 12 \leq k.n^3  $\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $k = 4 + 7 + 12 = 23$ :
+        \begin{center}
+            $4n^3 + 7n^2 + 12 \leq 23n^3$ \\
+            $ 19n^3 - 7n^2 - 12 \geq 0 $ \\
+            $(n-1)(19n^2+12n+12) \geq 0$ \\
+            $(19n^2+12n+12)$ always $\geq 0 \rightarrow (n-1) \geq 0$ \\
+            $ n \geq 1$ \\
+            \huge $\rightarrow k = 23, n_0 = 1$
+        \end{center}
+    \section*{\huge Problem 3}
+        Show that $nlog(n) - 2n + 13$  is $\Omega(nlog(n)).$ : \\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            \large $nlog(n) - 2n + 13 \geq cnlog(n)$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 0.1$ :
+        \begin{center}
+            $0.9nlog(n) \geq 2n -13$\\
+            $9nlog(n) \geq 20n -130$\\
+            $9log(n) \geq 20 - \frac{130}{n}$\\
+            $log(n) \geq \frac{20}{9} - \frac{130}{9n}$\\
+            $n \geq 10^{\frac{20}{9} - \frac{130}{9n}}$\\
+            $n \geq 0 \rightarrow 10 ^ {\frac{20}{9}} > 10 ^{\frac{20}{9} - \frac{130}{9n}}$\\
+            $\rightarrow n \geq 10 ^ {\frac{20}{9}} \rightarrow n \geq 1000$ \\
+            \huge $\rightarrow c = 0.1, n_0 = 1000$
+        \end{center}
+    \section*{\huge Problem 4}
+        Show that $P(n) = n^2 + 5n + 7$  is $\Theta(n^2).$ : \\
+        \tab $Big\ O:$\\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            $n^2 + 5n + 7 \leq cn^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 2 + 5 + 7 = 13 : $
+        \begin{center}
+            $n^2 + 5n + 7 \leq 13n^2$\\
+            $12n^2 - 5n - 7 \geq 0$\\
+            $(n-1)(12n + 7) \geq 0$\\
+            $n \geq 1$\\
+            \large $\rightarrow c = 13, n_0  = 1$\\
+            \Large $\Rightarrow P(n) \in O(n^2)$ \\
+        \end{center}
+        \tab $Big\ \Omega:$\\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            $n^2 + 5n + 7 \geq cn^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 1\ and\ n_0 = 0 $ the unequality is obviously satisfied.
+        \begin{center}
+            \Large $\Rightarrow P(n) \in \Omega(n^2)$ \\
+            \huge $\Rightarrow P(n) \in \Theta(n^2)$
+        \end{center}
+    \section*{\huge Problem 5}
+        Show that $P(n) = 0.5n^2 - 3n$  is $\Theta(n^2).$ : \\
+        \tab $Big\ O:$\\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            $0.5n^2 - 3n \leq cn^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 0.5 : $
+        \begin{center}
+            $0.5n^2 - 3n \leq 0.5n^2$\\
+            $3n \geq 0$\\
+            $n \geq 0$\\
+            \large $\rightarrow c = 0.5, n_0  = 0$\\
+            \Large $\Rightarrow P(n) \in O(n^2)$
+        \end{center}
+        \tab $Big\ \Omega:$\\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            $0.5n^2 - 3n \geq cn^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 0.4 : $
+        \begin{center}
+            $0.5n^2 - 3n \geq 0.4n^2$\\
+            $0.1n^2 - 3n \geq 0$\\
+            $n(0.1n - 3) \geq 0$\\
+            $n \geq 30$\\
+            \large $\rightarrow c = 0.4, n_0 = 30$\\
+            \Large $\Rightarrow P(n) \in \Omega(n^2)$ \\
+            \huge $\Rightarrow P(n) \in \Theta(n^2)$
+        \end{center}
+    \section*{\huge Problem 6}
+        Show that $P(n) = 3n^2 + 8nlog(n)$  is $\Theta(n^2).$ : \\
+        \tab $Big\ O:$\\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            $3n^2 + 8nlog(n) \leq cn^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 3 + 8 = 11 : $
+        \begin{center}
+            $3n^2 + 8nlog(n) \leq 11n^2$\\
+            $8n^2 - 8nlog(n) \geq 0$\\
+            $n^2 - nlog(n) \geq 0$\\
+            $n(n - log(n)) \geq 0$\\
+            $(n - log(n))$ is always $> 0 \rightarrow n \geq 0$\\ 
+            $log(0)$ is undefined $ \rightarrow n > 0 $\\
+            \large $\rightarrow c = 11, n_0  = 1$\\
+            \Large $\Rightarrow P(n) \in O(n^2)$
+        \end{center}
+        \tab $Big\ \Omega:$\\
+        \tab There must exist $n_0$ and c such that :
+        \begin{center}
+            $3n^2 + 8nlog(n) \geq cn^2$\\
+            \large $n \geq n_0$
+        \end{center}
+        \tab So with $c = 1, n_0 = 1$ the unequality is obviously satisfied.
+        \begin{center}
+            \Large $\Rightarrow P(n) \in \Omega(n^2)$ \\
+            \huge $\Rightarrow P(n) \in \Theta(n^2)$
+        \end{center}
+\end{document}
+
+    
