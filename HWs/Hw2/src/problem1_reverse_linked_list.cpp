@@ -14,6 +14,17 @@ struct LinkedList
 	LinkedList() : head(nullptr), size(0){};
 };
 
+void print_list(LinkedList &list)
+{
+	Node *tmp_iterator = list.head;
+	while (tmp_iterator != nullptr)
+	{
+		std::cout << tmp_iterator->data << " ";
+		tmp_iterator = tmp_iterator->next;
+	}
+	std::cout << std::endl;
+}
+
 void push(LinkedList &list, int data)
 {
 	list.size++;
@@ -27,43 +38,42 @@ void push(LinkedList &list, int data)
 		tmp_iterator = tmp_iterator->next;
 	tmp_iterator->next = new Node(data);
 }
-void print_list(LinkedList &list)
+
+void reverse_linked_list(LinkedList &list)
 {
-	Node *tmp_iterator = list.head;
-	while (tmp_iterator != nullptr)
+	for (int i = 0; i < list.size / 2; ++i)
 	{
-		std::cout << tmp_iterator->data << " ";
-		tmp_iterator = tmp_iterator->next;
+		Node *temp_node = list.head;
+		for (int j = 0; j < i; ++j)
+			temp_node = temp_node->next;
+		Node *temp_node_2 = list.head;
+		for (int j = 0; j < (list.size - 1) - i; ++j)
+			temp_node_2 = temp_node_2->next;
+		int aux = temp_node->data;
+		temp_node->data = temp_node_2->data;
+		temp_node_2->data = aux;
 	}
-	std::cout << std::endl;
 }
 
-LinkedList reverse_linked_list(LinkedList &linked_list)
+void reve(LinkedList &list)
 {
-	int size = linked_list.size;
-	int arr[size];
-	Node *temp_iterator = linked_list.head;
-	for (int i = 0; i < size; ++i)
+	Node *aux = nullptr;
+	while(list.head)
 	{
-		arr[i] = temp_iterator->data;
-		temp_iterator = temp_iterator->next;
+		std::swap(list.head->next, aux);
+		std::swap(list.head, aux);
 	}
-	LinkedList new_linked_list;
-	Node *current_node = new_linked_list.head;
-	for (int i = size - 1; i >= 0; --i)
-		push(new_linked_list, arr[i]);	
-	return new_linked_list;
+	list.head = aux;
 }
-
 
 int main()
 {
 	LinkedList my_linked_list;
 	print_list(my_linked_list);
-	for (int i = 0; i < 10; ++i)
+	for (int i = 0; i < 4; ++i)
 		push(my_linked_list, i);
 	print_list(my_linked_list);
-	LinkedList reversed = reverse_linked_list(my_linked_list);
-	print_list(reversed);
+	reve(my_linked_list);
+	print_list(my_linked_list);
 	return 0;
 }
