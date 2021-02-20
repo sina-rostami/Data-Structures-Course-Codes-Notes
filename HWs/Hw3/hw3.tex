@@ -1,0 +1,63 @@
+\documentclass{report}
+\usepackage[
+    a4paper,
+    top = 2cm,
+    left = 2cm,
+    bottom = 1cm,
+    ]{geometry}
+\usepackage{graphicx}
+\usepackage{algorithm2e}
+\pagestyle{empty}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\title{\Huge Data Structures \\ HW3}
+\author{\huge Sina Rostami \\\huge \textbf{9822143}}
+\date{Fall 2020}
+
+
+\begin{document}
+    \begin{figure}
+        \includegraphics[height = 30mm,width = 40mm]{../kntu_logo.jpg}
+    \end{figure}
+    \maketitle
+    \section* {Problem 1 :}
+    1. A binary tree which is not complete and not full \\
+        \includegraphics[height = 80mm,width = 120mm]{1_1.png}\\
+    2. A binary tree which is complete but not full\\
+        \includegraphics[height = 80mm,width = 120mm]{1_2.png}\\
+    3. A binary tree which is full but not complete\\
+        \includegraphics[height = 80mm,width = 120mm]{1_3.png}\\\\
+    4.A perfect binary tree which is full and complete\\
+    \includegraphics[height = 80mm,width = 120mm]{1_4.png}\\
+    \section* {Problem 2 :}
+    1.\\
+    \includegraphics[height = 80mm,width = 120mm]{2_1.png}\\
+    \Large BFS : [30, 15, 60, 7, 22, 45, 75, 17, 27]\\
+    DFS : [30, 15, 7, 22, 17, 27, 60, 45, 75]\\
+    Pre-order : [30, 15, 7, 22, 17, 27, 60, 45, 75]\\
+    In-order : [7, 15, 17, 22, 27, 30, 45, 60, 75]\\
+    Post-order : [7, 17, 27, 22, 15, 45, 75, 60, 30]\\
+    \newpage
+    \normalsize
+    2.\\
+    \includegraphics[height = 80mm,width = 120mm]{2_2.png}\\
+    \Large BFS : [25, 20, 36, 10, 22, 30, 40, 5, 12, 28, 38, 48]\\
+    DFS : [25, 20, 10, 5, 12, 22, 36, 30, 28, 40, 38, 48]\\
+    Pre-order : [25, 20, 10, 5, 12, 22, 36, 30, 28, 40, 38, 48]\\
+    In-order : [5, 10, 12, 20, 22, 25, 28, 30, 36, 38, 40, 48]\\
+    Post-order : [5, 12, 10, 22, 20, 28, 30, 38, 48, 40, 36, 25]\\
+    \section* {Problem 2 :}
+    1.\\
+    \includegraphics[height = 80mm,width = 120mm]{3_1.png}\\
+    Pre-order : [12, 3, 15, 14, 35, 21, 42]\\
+    In-order : [3, 12, 14, 15, 21, 35, 42]\\
+    Post-order : [3, 14, 21, 42, 35, 15, 12]
+    \newpage
+
+    2.\\
+
+    \includegraphics[height = 80mm,width = 120mm]{3_2.png}\\
+    Pre-order : [70, 11, 10, 47, 20, 12, 13, 61, 62, 81]\\
+    In-order : [10, 11, 12, 13, 20, 47, 61, 62, 70, 81]\\
+    Post-order : [10, 13, 12, 20, 62, 61, 47, 11, 81, 70]\\
+\end{document}
